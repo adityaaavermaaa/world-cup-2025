@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World Cup 2025 - School Showcase</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header / Navbar */
+  header {
+    background: #fff;
+    position:relative;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #2a9df4;
+    box-shadow: 0 3px 5px rgb(42 157 244 / 0.15);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2a9df4;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  ul.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  ul.nav-links li a:hover,
+  ul.nav-links li a.active {
+    background-color: #2a9df4;
+    color: white;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #2a9df4;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    ul.nav-links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      background: #fff;
+      height: calc(100vh - 60px);
+      width: 250px;
+      flex-direction: column;
+      padding: 40px 20px;
+      box-shadow: -4px 0 30px rgba(42,157,244,0.2);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      border-radius: 0 0 0 20px;
+    }
+    ul.nav-links.show {
+      right: 0;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #777;
+    background: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">World Cup 2025</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="schedules.html" >Schedule</a></li>
+      <li><a href="players.html"  class="active" >Players</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+		      <li><a href="venue.html">Venue</a></li>
+
+		      <li><a href="teams.html">Teams</a></li>
+		      <li><a href="contact.html">Contact</a></li>
+
+
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+</header>
+	
+	
+	
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff2e6, #ffe6f0, #e6f7ff);
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 3rem;
+      color: #ff4d4d;
+    }
+
+    .filter-bar {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .filter-bar button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #ff66b2;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .filter-bar button.active,
+    .filter-bar button:hover {
+      background: #ff3385;
+      transform: scale(1.1);
+    }
+
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .player-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .player-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+    }
+
+    .player-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .player-card h3 {
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    .player-card p {
+      margin-bottom: 15px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Top Players of World Cup 2025</h1>
+
+  <div class="filter-bar">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="forward">Forwards</button>
+    <button data-filter="midfield">Midfielders</button>
+    <button data-filter="defender">Defenders</button>
+    <button data-filter="goalkeeper">Goalkeepers</button>
+  </div>
+
+  <div class="players-grid">
+    <!-- Sample player cards - copy & repeat for longer page -->
+    <div class="player-card forward">
+      <img src="images/messi.jpg" alt="Lionel Messi">
+      <h3>Lionel Messi</h3>
+      <p>Forward - Argentina</p>
+    </div>
+    <div class="player-card forward">
+      <img src="images/ronaldo.jpg" alt="Cristiano Ronaldo">
+      <h3>Cristiano Ronaldo</h3>
+      <p>Forward - Portugal</p>
+    </div>
+    <div class="player-card forward">
+      <img src="images/mbappe.jpg" alt="Kylian Mbappé">
+      <h3>Kylian Mbappé</h3>
+      <p>Forward - France</p>
+    </div>
+    <div class="player-card midfield">
+      <img src="images/luka.jpg" alt="Luka Modric">
+      <h3>Luka Modrić</h3>
+      <p>Midfielder - Croatia</p>
+    </div>
+    <div class="player-card midfielder">
+      <img src="images/kevin.jpg" alt="Kevin De Bruyne">
+      <h3>Kevin De Bruyne</h3>
+      <p>Midfielder - Belgium</p>
+    </div>
+    <div class="player-card defender">
+      <img src="images/van.jpg" alt="Virgil van Dijk">
+      <h3>Virgil van Dijk</h3>
+      <p>Defender - Netherlands</p>
+    </div>
+    <div class="player-card goalkeeper">
+      <img src="images/manuel.jpg" alt="Manuel Neuer">
+      <h3>Manuel Neuer</h3>
+      <p>Goalkeeper - Germany</p>
+    </div>
+    <div class="player-card defender">
+      <img src="images/Sergio Ramos.jpg" alt="Sergio Ramos">
+      <h3>Sergio Ramos</h3>
+      <p>Defender - Spain</p>
+    </div>
+    <div class="player-card goalkeeper">
+      <img src="images/alison.jpg" alt="Alisson Becker">
+      <h3>Alisson Becker</h3>
+      <p>Goalkeeper - Brazil</p>
+    </div>
+    <div class="player-card midfield">
+      <img src="images/kante.jpg" alt="N'Golo Kanté">
+      <h3>N'Golo Kanté</h3>
+      <p>Midfielder - France</p>
+    </div>
+
+    
+	  
+	  
+	  
+    <div class="player-card forward">
+      <img src="images/haaland.jpg" alt="Erling Haaland">
+      <h3>Erling Haaland</h3>
+      <p>Forward - Norway</p>
+    </div>
+    <div class="player-card midfield">
+      <img src="images/Bellingham.jpg" alt="Jude Bellingham">
+      <h3>Jude Bellingham</h3>
+      <p>Midfielder - England</p>
+    </div>
+    <div class="player-card defender">
+      <img src="images/dias.jpg" alt="Rúben Dias">
+      <h3>Rúben Dias</h3>
+      <p>Defender - Portugal</p>
+    </div>
+   
+   
+	  <div class="player-card goalkeeper">
+      <img src="images/courtois.jpg" alt="Thibaut Courtois">
+      <h3>Thibaut Courtois</h3>
+      <p>Goalkeeper - Belgium</p>
+    </div> 
+	  <div class="player-card forward">
+  <img src="images/Samuel Eto'o.jpg" alt="Samuel Eto'o">
+  <h3>Samuel Eto'o</h3>
+  <p>Forward - Cameroon</p>
+</div>
+
+	  
+
+	  
+	  
+	  
+	  
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-bar button");
+    const cards = document.querySelectorAll(".player-card");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        cards.forEach(card => {
+          if (filter === "all" || card.classList.contains(filter)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+	
+	
+	
+
+	
+<footer>
+  Name - ISHANVI VERMA | Class 8th Grade  | Section -E    | BAL MANDIR SR. SEC. SCHOOL
+</footer>
+
+<script>
+  // Hamburger toggle mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('ul.nav-links li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

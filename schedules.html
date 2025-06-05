@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World Cup 2025 - School Showcase</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header / Navbar */
+  header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #2a9df4;
+    box-shadow: 0 3px 5px rgb(42 157 244 / 0.15);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2a9df4;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  ul.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  ul.nav-links li a:hover,
+  ul.nav-links li a.active {
+    background-color: #2a9df4;
+    color: white;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #2a9df4;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    ul.nav-links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      background: #fff;
+      height: calc(100vh - 60px);
+      width: 250px;
+      flex-direction: column;
+      padding: 40px 20px;
+      box-shadow: -4px 0 30px rgba(42,157,244,0.2);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      border-radius: 0 0 0 20px;
+    }
+    ul.nav-links.show {
+      right: 0;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #777;
+    background: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">World Cup 2025</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="schedules.html" class="active">Schedule</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+		      <li><a href="venue.html">Venue</a></li>
+
+		      <li><a href="teams.html">Teams</a></li>
+		      <li><a href="contact.html">Contact</a></li>
+
+
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+</header>
+	
+	
+	
+	
+	
+	
+	
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      color: #222;
+    }
+
+    header {
+      background: #ffffffcc;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position:relative;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #f57c00;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .stage {
+      margin-bottom: 50px;
+      background: #fff8e1;
+      border-left: 6px solid #f57c00;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .stage:hover {
+      transform: translateY(-5px);
+    }
+
+    .stage h2 {
+      margin-bottom: 15px;
+      color: #e65100;
+      font-size: 1.8rem;
+    }
+
+    .match {
+      background: #fff3e0;
+      border: 2px dashed #ff9800;
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .match:hover {
+      background: #ffe0b2;
+    }
+
+    .match-details {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .match-details img {
+      width: 28px;
+      height: 28px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .match-details span {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .match-time {
+      font-size: 0.9rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+      background: #fff8e1;
+      color: #444;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>World Cup 2025 Schedule</h1>
+</header>
+
+<div class="container">
+
+  <!-- Group Stage -->
+  <div class="stage">
+    <h2>Group Stage: June 10 - 25, 2025</h2>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/br.png" alt="Brazil">
+        <span>Brazil</span> vs <span>Germany</span>
+        <img src="https://flagcdn.com/w40/de.png" alt="Germany">
+      </div>
+      <div class="match-time">June 11, New York</div>
+    </div>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina">
+        <span>Argentina</span> vs <span>France</span>
+        <img src="https://flagcdn.com/w40/fr.png" alt="France">
+      </div>
+      <div class="match-time">June 14, Madrid</div>
+    </div>
+  </div>
+
+  <!-- Round of 16 -->
+  <div class="stage">
+    <h2>Round of 16: June 28 - 30, 2025</h2>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/pt.png" alt="Portugal">
+        <span>Portugal</span> vs <span>USA</span>
+        <img src="https://flagcdn.com/w40/us.png" alt="USA">
+      </div>
+      <div class="match-time">June 29, London</div>
+    </div>
+  </div>
+
+  <!-- Quarter Finals -->
+  <div class="stage">
+    <h2>Quarter Finals: July 3 - 5, 2025</h2>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/es.png" alt="Spain">
+        <span>Spain</span> vs <span>England</span>
+        <img src="https://flagcdn.com/w40/gb.png" alt="England">
+      </div>
+      <div class="match-time">July 4, Paris</div>
+    </div>
+  </div>
+
+  <!-- Semi Finals -->
+  <div class="stage">
+    <h2>Semi Finals: July 9 - 10, 2025</h2>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/it.png" alt="Italy">
+        <span>Italy</span> vs <span>France</span>
+        <img src="https://flagcdn.com/w40/fr.png" alt="France">
+      </div>
+      <div class="match-time">July 9, Berlin</div>
+    </div>
+  </div>
+
+  <!-- Final -->
+  <div class="stage">
+    <h2>Final: July 15, 2025</h2>
+
+    <div class="match">
+      <div class="match-details">
+        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina">
+        <span>Argentina</span> vs <span>Brazil</span>
+        <img src="https://flagcdn.com/w40/br.png" alt="Brazil">
+      </div>
+      <div class="match-time">July 15, Dubai</div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+	
+	
+	
+	
+	
+<footer>
+  Name - ISHANVI VERMA | Class 8th Grade  | Section -E    | BAL MANDIR SR. SEC. SCHOOL
+</footer>
+
+<script>
+  // Hamburger toggle mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('ul.nav-links li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

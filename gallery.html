@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World Cup 2025 - School Showcase</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header / Navbar */
+  header {
+    background: #fff;
+    position:relative;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #2a9df4;
+    box-shadow: 0 3px 5px rgb(42 157 244 / 0.15);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2a9df4;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  ul.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  ul.nav-links li a:hover,
+  ul.nav-links li a.active {
+    background-color: #2a9df4;
+    color: white;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #2a9df4;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    ul.nav-links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      background: #fff;
+      height: calc(100vh - 60px);
+      width: 250px;
+      flex-direction: column;
+      padding: 40px 20px;
+      box-shadow: -4px 0 30px rgba(42,157,244,0.2);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      border-radius: 0 0 0 20px;
+    }
+    ul.nav-links.show {
+      right: 0;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">World Cup 2025</div>
+    color: #777;
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="schedules.html" >Schedule</a></li>
+      <li><a href="players.html"   >Players</a></li>
+      <li><a href="gallery.html"  class="active">Gallery</a></li>
+		      <li><a href="venue.html">Venue</a></li>
+
+		      <li><a href="teams.html">Teams</a></li>
+		      <li><a href="contact.html">Contact</a></li>
+
+
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+</header>
+	
+	
+
+	
+	
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #fbb034;
+      margin: 40px 0;
+    }
+
+    .gallery-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+    }
+
+    .grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .grid-gallery img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .highlight-block {
+      background: #fff8e1;
+      padding: 40px;
+      margin: 60px auto;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(251, 176, 52, 0.2);
+    }
+
+    .highlight-block h2 {
+      font-size: 2rem;
+      color: #2a9df4;
+      margin-bottom: 20px;
+    }
+
+    .highlight-block p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .carousel-section {
+      background: #e0f7fa;
+      padding: 80px 20px;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel-container img {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      scroll-snap-align: start;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-container img:hover {
+      transform: scale(1.1);
+    }
+
+    .quote-section {
+      background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .quote-section blockquote {
+      font-size: 1.8rem;
+      max-width: 900px;
+      margin: auto;
+      font-style: italic;
+      color: #0277bd;
+    }
+
+    .bottom-gallery {
+      background: #fce4ec;
+      padding: 60px 20px;
+    }
+
+    .bottom-gallery img {
+      border: 6px solid #f8bbd0;
+    }
+  </style>
+
+<body>
+
+  <h1>Gallery - World Cup 2025</h1>
+
+  <section class="gallery-section">
+    <div class="grid-gallery">
+      <img src="images/opening ceremony.jpg" alt="Opening Ceremony">
+      <img src="images/goal.jpg" alt="Team Spirit">
+      <img src="images/stadium  night.jpg" alt="Stadium at Night">
+      <img src="images/fans.jpg" alt="Cheering Fans">
+      <img src="images/CR7.jpg" alt="Goal Celebration">
+      <img src="images/PARADE.jpg" alt="Flag Parade">
+		<img src="images/FOOTBALL1.jpg" alt="Goal Celebration">
+      <img src="images/FOOTBALL2.jpg" alt="Flag Parade">
+    </div>
+  </section>
+
+  <section class="highlight-block">
+    <h2>Moments That Defined Greatness</h2>
+    <p>
+      From the roar of the crowd to the thunder of last-minute goals, World Cup 2025 has been a celebration of global unity and unstoppable energy. Here are some snapshots of unforgettable memories, passion, and pride captured in time.
+    </p>
+  </section>
+
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <img src="images/finale.jpg" alt="Dribble Moment">
+      <img src="images/stadium.jpg" alt="Team Captain">
+      <img src="images/match.jpg" alt="Final Whistle">
+      <img src="images/football3.jpg" alt="Victory Pose">
+      <img src="images/football4.jpg" alt="Crowd Cheers">
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <blockquote>
+      "In every goal, every cheer, every heart racing moment — we found the spirit of the game."
+    </blockquote>
+  </section>
+
+  <section class="bottom-gallery">
+    <div class="grid-gallery">
+      <img src="images/footabll6.jpg" alt="Coach Pep Talk">
+      <img src="images/train1.jpg" alt="Training Time">
+      <img src="images/train2.jpeg" alt="Final Moment">
+      <img src="images/ball2025.jpg" alt="The Ball of 2025">
+    </div>
+  </section>
+
+</body>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
+	  
+  
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-bar button");
+    const cards = document.querySelectorAll(".player-card");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        cards.forEach(card => {
+          if (filter === "all" || card.classList.contains(filter)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+	
+	
+	
+
+	
+<footer>
+  Name - ISHANVI VERMA | Class 8th Grade  | Section -E    | BAL MANDIR SR. SEC. SCHOOL
+</footer>
+
+<script>
+  // Hamburger toggle mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('ul.nav-links li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

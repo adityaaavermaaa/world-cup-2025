@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World Cup 2025 - School Showcase</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header / Navbar */
+  header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #2a9df4;
+    box-shadow: 0 3px 5px rgb(42 157 244 / 0.15);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2a9df4;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  ul.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  ul.nav-links li a:hover,
+  ul.nav-links li a.active {
+    background-color: #2a9df4;
+    color: white;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #2a9df4;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    ul.nav-links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      background: #fff;
+      height: calc(100vh - 60px);
+      width: 250px;
+      flex-direction: column;
+      padding: 40px 20px;
+      box-shadow: -4px 0 30px rgba(42,157,244,0.2);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      border-radius: 0 0 0 20px;
+    }
+    ul.nav-links.show {
+      right: 0;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #2a9df4, #fbb034);
+    color: white;
+    padding: 120px 20px 80px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+  .hero h1 {
+    font-size: 3.6rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .hero p.subtitle {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-weight: 500;
+  }
+  .hero .school-info {
+    background: rgba(255 255 255 / 0.3);
+    padding: 20px 25px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(255 255 255 / 0.4);
+    font-weight: 600;
+    color: #222;
+  }
+  .hero .school-info span {
+    display: block;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  .hero .school-info mark {
+    background-color: #fbb034;
+    color: #222;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 700;
+  }
+
+  /* Sections styling */
+  section {
+    padding: 80px 20px;
+  }
+  section:nth-child(even) {
+    background: #f9f9f9;
+  }
+  section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #2a9df4;
+    font-weight: 700;
+  }
+
+  /* Schedule Table */
+  .schedule-table {
+    max-width: 900px;
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .schedule-table th,
+  .schedule-table td {
+    border: 2px solid #2a9df4;
+    padding: 14px 22px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .schedule-table thead th {
+    background: #fbb034;
+    color: white;
+  }
+  .schedule-table tbody tr:hover {
+    background-color: #2a9df4;
+    color: white;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Players Grid */
+  .players-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+    gap: 35px;
+  }
+  .player-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(42, 157, 244, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+  .player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(42, 157, 244, 0.3);
+  }
+  .player-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto 15px;
+    border: 5px solid #fbb034;
+    transition: transform 0.3s ease;
+  }
+  .player-card:hover img {
+    transform: scale(1.08);
+  }
+  .player-card h3 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #2a9df4;
+    margin-bottom: 6px;
+  }
+  .player-card p {
+    font-weight: 500;
+    color: #555;
+    font-size: 1rem;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(42, 157, 244, 0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #777;
+    background: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">World Cup 2025</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="schedules.html">Schedule</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+		      <li><a href="venue.html">Venue</a></li>
+
+		      <li><a href="teams.html">Teams</a></li>
+		      <li><a href="contact.html">Contact</a></li>
+
+
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hero Section RGB Background</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animated RGB gradient background */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(270deg,
+      red, blue, green, red);
+    background-size: 600% 600%;
+    animation: rgbGradient 15s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes rgbGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.3em;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  }
+  .hero p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>Welcome to World Cup 2025</h1>
+  <p>Where passion, skill, and dreams collide on the world’s biggest stage.
+
+</p>
+</section>
+
+</body>
+</html>
+
+    <span>Name: <mark>  ISHANVI VERMA</mark></span>
+    <span>Class: <mark>8-E</mark></span>
+    <span>School Name: <mark> BAL MANDIR SR. SEC. SCHOOL </mark></span>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2>Schedule</h2>
+  <table class="schedule-table" aria-label="World Cup Schedule">
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Date</th>
+        <th>Venue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Group Stage</td><td>June 10-25, 2025</td><td>Multiple Cities</td></tr>
+      <tr><td>Round of 16</td><td>June 28-30, 2025</td><td>Major Stadiums</td></tr>
+      <tr><td>Quarter Finals</td><td>July 3-5, 2025</td><td>Main Stadiums</td></tr>
+      <tr><td>Semi Finals</td><td>July 9-10, 2025</td><td>Capital City</td></tr>
+      <tr><td>Final</td><td>July 15, 2025</td><td>Grand Arena</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="players">
+  <h2>Star Players</h2>
+  <div class="players-grid">
+    <div class="player-card">
+      <img src="images/messi.jpg" alt="Lionel Messi" loading="lazy" />
+      <h3>Lionel Messi</h3>
+      <p>Argentina - Forward</p>
+    </div>
+    <div class="player-card">
+      <img src="images/ronaldo.jpg" alt="Cristiano Ronaldo" loading="lazy" />
+      <h3>Cristiano Ronaldo</h3>
+      <p>Portugal - Forward</p>
+    </div>
+    <div class="player-card">
+      <img src="images/neymar.jpg" alt="Neymar Jr." loading="lazy" />
+      <h3>Neymar Jr.</h3>
+      <p>Brazil - Forward</p>
+    </div>
+    <div class="player-card">
+      <img src="images/mbappe.jpg" alt="Kylian Mbappé" loading="lazy" />
+      <h3>Kylian Mbappé</h3>
+      <p>France - Forward</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/goal.jpg" alt="Goal Celebration" loading="lazy" />
+    <img src="images/stadium.jpg" alt="Stadium" loading="lazy" />
+    <img src="images/finale.jpg" alt="Final Match" loading="lazy" />
+    <img src="images/opening ceremony.jpg" alt="Opening Ceremony" loading="lazy" />
+	   <img src="images/match.jpg" alt="Opening Ceremony" loading="lazy" />
+	   <img src="images/cartoon.jpg" alt="Opening Ceremony" loading="lazy" />
+  </div>
+</section>
+
+<footer>
+  Name ISHANVI VERMA | Class 8th Grade  | Section -E    | BAL MANDIR SR. SEC. SCHOOL
+</footer>
+
+<script>
+  // Hamburger toggle mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('ul.nav-links li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>
